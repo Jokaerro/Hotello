@@ -5,4 +5,5 @@ package pro.games_box.hotello.presentation.application;
  */
 
 public class Config {
+    public static final String API_BASE_URL = "https://raw.githubusercontent.com/";
 }
