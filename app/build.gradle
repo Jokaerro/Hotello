@@ -54,4 +54,6 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
 
     compile 'org.projectlombok:lombok:1.16.14'
+
+    compile 'com.github.pedrovgs:renderers:3.3.0'
 }
