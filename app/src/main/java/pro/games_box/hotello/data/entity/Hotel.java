@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
 @Accessors(prefix = "m")
 public class Hotel {
     @SerializedName("id")
-    private Integer mId;
+    private int mId;
 
     @SerializedName("name")
     private String mName;
@@ -24,11 +24,13 @@ public class Hotel {
     private String mAddress;
 
     @SerializedName("stars")
-    private Integer mStars;
+    private int mStars;
 
     @SerializedName("distance")
     private Double mDistance;
 
     @SerializedName("suites_availability")
     private String mSuitesAvailability;
+
+    private HotelDetail mDetails;
 }

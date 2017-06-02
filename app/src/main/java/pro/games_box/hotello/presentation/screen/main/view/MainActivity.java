@@ -47,7 +47,7 @@ public class MainActivity extends BaseActivity implements MainView {
 
         App.getAppComponent().injectMainActivity(this);
 
-        initAdapter();
+//        initAdapter();
         initListView();
 
         mPresenter.setView(this);
@@ -58,6 +58,13 @@ public class MainActivity extends BaseActivity implements MainView {
     }
 
     private void initListView() {
+        mHotelList.setAdapter(mAdapter);
+    }
+
+    public void updateListView(List<Hotel> hotels){
+        AdapteeCollection<Hotel> hotelCollection = new ListAdapteeCollection<Hotel>(hotels);
+        mAdapter = new RendererAdapter<Hotel>(new HotelRendererBuilder(), hotelCollection);
+
         mHotelList.setAdapter(mAdapter);
     }
 

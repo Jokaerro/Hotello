@@ -69,7 +69,7 @@ public abstract  class HotelRenderer extends Renderer<Hotel> {
     }
 
     private void renderTitle(Hotel hotel) {
-        this.title.setText(hotel.getName());
+        this.mTitle.setText(hotel.getName());
     }
 
     private void renderRating(Hotel hotel) {
