@@ -3,6 +3,8 @@
     package="pro.games_box.hotello"
     >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".presentation.application.App"
         android:allowBackup="true"
@@ -19,6 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".presentation.screen.hoteldetail.view.HotelDetailActivity"/>
     </application>
 
 </manifest>

@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:outlineAttrs="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <ImageView
         android:id="@+id/iv_thumbnail"
         style="@style/AppTheme.Hotel.Thumbnail"/>
 
-    <RatingBar
+    <com.willy.ratingbar.ScaleRatingBar
+        xmlns:rb="http://schemas.android.com/apk/res-auto"
         android:id="@+id/ratingBar_indicator"
+        rb:numStars="5"
+        rb:starPadding="15"
+        rb:drawableEmpty="@drawable/empty"
+        rb:drawableFilled="@drawable/filled"
         style="@style/AppTheme.Hotel.Rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:clickable="false"/>
+        />
 
     <TextView
         android:id="@+id/tv_distance"
-        style="@style/AppTheme.Hotel.Label"/>
+        style="@style/AppTheme.Hotel.Label"
+        android:background="@drawable/text_background"
+        />
 
-    <TextView
+    <pro.games_box.hotello.presentation.component.OutlineTextView
         android:id="@+id/tv_title"
-        style="@style/AppTheme.Hotel.Title"/>
+        style="@style/AppTheme.Hotel.Title"
+        fontPath="@string/font_title"
+        outlineAttrs:textStrokeColor="@color/ratingBg"
+        outlineAttrs:textStrokeWidth="0.9dp"/>
 </RelativeLayout >

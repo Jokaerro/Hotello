@@ -6,6 +6,8 @@ import com.google.gson.annotations.SerializedName;
  * Created by Tesla on 01.06.2017.
  */
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -13,9 +15,9 @@ import lombok.experimental.Accessors;
 @Getter
 @Setter
 @Accessors(prefix = "m")
-public class Hotel {
+public class Hotel implements Serializable {
     @SerializedName("id")
-    private int mId;
+    private String mId;
 
     @SerializedName("name")
     private String mName;
@@ -32,5 +34,11 @@ public class Hotel {
     @SerializedName("suites_availability")
     private String mSuitesAvailability;
 
-    private HotelDetail mDetails;
+    public int getFreeRoomsCount(){
+        return mSuitesAvailability.split(":").length;
+    }
+
+    public int getDistance(){
+        return mDistance.intValue();
+    }
 }

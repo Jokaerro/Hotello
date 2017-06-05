@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Hotello</string>
+    <string name="loading">Please wait, hotels loading...</string>
+    <string name="font_normal">fonts/SF_UI_Display_Thin.ttf</string>
+    <string name="font_title">fonts/SF_UI_Display_Medium.ttf</string>
+    <string name="address">Hotel address:</string>
+    <string name="distance">Distance to hotel:</string>
+    <string name="coordinates">Hotel coordinates:</string>
+    <string name="suits">Available hotel rooms:</string>
+    <string name="error">Error</string>
+    <string name="error_button">OKAY</string>
+    <string name="error_empty_hotel_list">Empty hotel list!</string>
 </resources>

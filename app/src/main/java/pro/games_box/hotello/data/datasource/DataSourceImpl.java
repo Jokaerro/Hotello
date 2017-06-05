@@ -20,7 +20,7 @@ public class DataSourceImpl implements DataSource{
     private RestApi mRestApi;
 
     @Inject
-    DataSourceImpl(@NonNull RestApi restApi) {
+    public DataSourceImpl(@NonNull RestApi restApi) {
         mRestApi = restApi;
     }
 

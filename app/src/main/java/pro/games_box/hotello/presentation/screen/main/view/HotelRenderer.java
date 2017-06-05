@@ -2,6 +2,7 @@ package pro.games_box.hotello.presentation.screen.main.view;
 
 import com.pedrogomez.renderers.Renderer;
 import com.squareup.picasso.Picasso;
+import com.willy.ratingbar.ScaleRatingBar;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,14 +16,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pro.games_box.hotello.R;
-import pro.games_box.hotello.presentation.screen.main.model.Hotel;
+import pro.games_box.hotello.data.entity.HotelDetail;
 
 
 /**
  * Created by Tesla on 01.06.2017.
  */
 
-public abstract  class HotelRenderer extends Renderer<Hotel> {
+public abstract class HotelRenderer extends Renderer<HotelDetail> {
 
     @BindView(R.id.iv_thumbnail)
     ImageView mThumbnail;
@@ -31,7 +32,7 @@ public abstract  class HotelRenderer extends Renderer<Hotel> {
     TextView mTitle;
 
     @BindView(R.id.ratingBar_indicator)
-    RatingBar mStars;
+    ScaleRatingBar mStars;
 
     @BindView(R.id.tv_distance)
     TextView mDistance;
@@ -46,33 +47,35 @@ public abstract  class HotelRenderer extends Renderer<Hotel> {
 
     @OnClick(R.id.iv_thumbnail)
     void onHotelClicked() {
-        Hotel hotel = getContent();
+        HotelDetail hotel = getContent();
         Toast.makeText(getContext(), "Hotel clicked. Title = " + hotel.getName(), Toast.LENGTH_LONG)
                 .show();
     }
 
     @Override
     public void render() {
-        Hotel hotel = getContent();
+        HotelDetail hotel = getContent();
         renderThumbnail(hotel);
         renderTitle(hotel);
         renderRating(hotel);
         renderDistance();
     }
 
-    private void renderThumbnail(Hotel hotel) {
+    private void renderThumbnail(HotelDetail hotel) {
         Picasso.with(getContext()).cancelRequest(mThumbnail);
         Picasso.with(getContext())
                 .load(hotel.getImage())
+                .transform(new CropSquareTransformation())
+                .error(R.drawable.placeholder)
                 .placeholder(R.drawable.placeholder)
                 .into(mThumbnail);
     }
 
-    private void renderTitle(Hotel hotel) {
+    private void renderTitle(HotelDetail hotel) {
         this.mTitle.setText(hotel.getName());
     }
 
-    private void renderRating(Hotel hotel) {
+    private void renderRating(HotelDetail hotel) {
         this.mStars.setRating(hotel.getStars());
     }
 

@@ -14,18 +14,18 @@
     </style>
 
     <style name="AppTheme.ListView">
-        <item name="android:layout_height">fill_parent</item>
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:dividerHeight">@dimen/divider_height</item>
     </style>
 
     <style name="AppTheme.Hotel">
-        <item name="android:layout_height">@dimen/video_height</item>
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/card_height</item>
+        <item name="android:layout_width">match_parent</item>
     </style>
 
     <style name="AppTheme.Hotel.Thumbnail">
-        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_height">@dimen/card_height</item>
         <item name="android:src">@drawable/placeholder</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:scaleType">centerCrop</item>
@@ -58,14 +58,12 @@
     </style>
 
     <style name="AppTheme.Hotel.Rating">
+        <item name="android:clickable">false</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_margin">@dimen/default_margin</item>
-        <item name="android:numStars">@integer/stars_count</item>
-        <item name="colorControlNormal">@android:color/holo_green_light</item>
-        <item name="colorControlActivated">@android:color/holo_orange_dark</item>
     </style>
 
 </resources>
