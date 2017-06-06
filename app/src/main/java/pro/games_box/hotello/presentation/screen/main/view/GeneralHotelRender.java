@@ -11,7 +11,7 @@ public class GeneralHotelRender extends HotelRenderer{
     @Override
     protected void renderDistance() {
         HotelDetail hotel = getContent();
-        getDistance().setText(hotel.getDistance());
+        getDistance().setText(String.valueOf(hotel.getDistance()));
     }
 
     @Override

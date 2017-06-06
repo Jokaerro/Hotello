@@ -38,7 +38,7 @@ public class Hotel implements Serializable {
         return mSuitesAvailability.split(":").length;
     }
 
-    public int getDistance(){
-        return mDistance.intValue();
+    public Double getDistance(){
+        return mDistance;
     }
 }

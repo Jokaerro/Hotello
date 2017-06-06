@@ -5,7 +5,7 @@
 	"phone": "+1 212-247-2000",
 	"site": "dreamhotels.com",
     "stars": 4,
-    "distance": 1.0,
+    "distance": 100.0,
     "image": "a7.jpg",
     "suites_availability": "42:33:22",
     "lat": 40.76438100000000,

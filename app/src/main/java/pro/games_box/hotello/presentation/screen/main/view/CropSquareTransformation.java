@@ -13,7 +13,7 @@ public class CropSquareTransformation implements Transformation {
     public Bitmap transform(Bitmap source) {
         int x = 2;
         int y = 2;
-        Bitmap result = Bitmap.createBitmap(source, x, y, source.getWidth()-2,  source.getHeight()-2);
+        Bitmap result = Bitmap.createBitmap(source, x, y, source.getWidth()-3,  source.getHeight()-3);
         if (result != source) {
             source.recycle();
         }

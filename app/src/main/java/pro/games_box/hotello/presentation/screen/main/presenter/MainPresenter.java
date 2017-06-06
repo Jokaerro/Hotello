@@ -115,7 +115,7 @@ public class MainPresenter extends BasePresenter<MainView>{
                             Collections.sort(hotelsDetails, (o1, o2) -> o2.getFreeRoomsCount() - o1.getFreeRoomsCount());
                             break;
                         case FROM_DISTANCE:
-                            Collections.sort(hotelsDetails, (o1, o2) -> o1.getDistance() - o2.getDistance());
+                            Collections.sort(hotelsDetails, (o1, o2) -> o1.getDistance().intValue() - o2.getDistance().intValue());
                             break;
                         default:
                             break;
