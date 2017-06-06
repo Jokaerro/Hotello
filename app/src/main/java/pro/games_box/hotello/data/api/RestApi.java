@@ -16,6 +16,6 @@ public interface RestApi {
     @GET("Jokaerro/hotello/master/api/{source}")
     Observable<List<Hotel>> getHotels(@Path("source") String hotelsSource);
 
-    @GET("iMofas/ios-android-test/master/api/{source}.json")
+    @GET("Jokaerro/hotello//master/api/{source}.json")
     Observable<HotelDetail> getHotel(@Path("source") String hotelSource);
 }
