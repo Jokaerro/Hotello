@@ -1,0 +1,13 @@
+{
+    "id": 22470,
+    "name": "Days Inn Hotel New York City-Broadway",
+    "address": "215 West 94th Street",
+	"phone": "+1 212-866-6400",
+	"site": "wyndhamhotels.com",
+    "stars": 2.0,
+    "distance": 2.79,
+    "image": "4.jpg",
+    "suites_availability": "15:48:115:72:81",
+    "lat": 40.79339950000000,
+	"lon": -73.97285789999999
+}

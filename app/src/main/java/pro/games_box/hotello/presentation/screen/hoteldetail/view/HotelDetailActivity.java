@@ -80,7 +80,7 @@ public class HotelDetailActivity extends BaseActivity{
         mBar.setRating(mHotelDetail.getStars());
         mTitle.setText(mHotelDetail.getName());
         mAddress.setText(mHotelDetail.getAddress());
-        String distance = mHotelDetail.getDistance() + " km";
+        String distance = mHotelDetail.getDistance() + " " + getString(R.string.measure_unit);
         mDistance.setText(distance);
         String coordinates = mHotelDetail.getLat() + " : " + mHotelDetail.getLon();
         mCoordinates.setText(coordinates);

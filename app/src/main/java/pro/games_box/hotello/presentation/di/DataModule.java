@@ -23,7 +23,7 @@ public class DataModule {
 
     @Provides
     @Singleton
-    DataSource provideGameDataSource(DataSource dataSource) {
+    DataSource providDataSource(DataSource dataSource) {
         return dataSource;
     }
 }

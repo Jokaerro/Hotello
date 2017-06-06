@@ -1,0 +1,13 @@
+{
+    "id": 13100,
+    "name": "The Gallivant Times Square",
+    "address": "234 West 48th Street",
+	"phone": "+1 212-246-8800",
+	"site": "thegallivantnyc.com",
+    "stars": 3.3,
+    "distance": 1.8,
+    "image": "",
+    "suites_availability": "1",
+    "lat": 40.76062100000000,
+    "lon": -73.98636399999999
+}

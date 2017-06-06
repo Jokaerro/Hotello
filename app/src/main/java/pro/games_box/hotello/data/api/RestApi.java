@@ -13,9 +13,9 @@ import retrofit2.http.Path;
  */
 
 public interface RestApi {
-    @GET("iMofas/ios-android-test/master/{source}")
+    @GET("Jokaerro/hotello/master/api/{source}")
     Observable<List<Hotel>> getHotels(@Path("source") String hotelsSource);
 
-    @GET("iMofas/ios-android-test/master/{source}.json")
+    @GET("iMofas/ios-android-test/master/api/{source}.json")
     Observable<HotelDetail> getHotel(@Path("source") String hotelSource);
 }

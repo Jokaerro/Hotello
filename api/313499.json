@@ -1,0 +1,13 @@
+{
+    "id": 313499,
+    "name": "Dream Downtown",
+    "address": "355 West 16th Street",
+	"phone": "+1 212-229-2559",
+	"site": "dreamhotels.com",
+    "stars": 4,
+    "distance": 3.5,
+    "image": "6.jpg",
+    "suites_availability": "2:87:24:65:26:119:202:6",
+    "lat": 40.74200870000000, 
+	"lon": -74.00372170000000
+}

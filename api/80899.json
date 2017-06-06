@@ -1,0 +1,13 @@
+{
+    "id": 80899,
+    "name": "Refinery Hotel",
+    "address": "63 West 38th Street",
+	"phone": "+1 646-664-0310",
+	"site": "refineryhotelnewyork.com",
+    "stars": 4.4,
+    "distance": 2.3,
+    "image": "3.jpg",
+    "suites_availability": "5:8:32:54",
+    "lat": 40.75211500000000,
+    "lon": -73.98545100000000
+}
