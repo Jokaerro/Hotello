@@ -2,9 +2,10 @@ package pro.games_box.hotello.presentation.screen.main.view;
 
 import com.pedrogomez.renderers.Renderer;
 import com.squareup.picasso.Picasso;
-import com.willy.ratingbar.ScaleRatingBar;
 
-import android.util.Log;
+import android.graphics.Color;
+import android.graphics.drawable.LayerDrawable;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public abstract class HotelRenderer extends Renderer<HotelDetail> {
     TextView mTitle;
 
     @BindView(R.id.ratingBar_indicator)
-    ScaleRatingBar mStars;
+    RatingBar mStars;
 
     @BindView(R.id.tv_distance)
     TextView mDistance;
@@ -63,7 +64,6 @@ public abstract class HotelRenderer extends Renderer<HotelDetail> {
     }
 
     private void renderThumbnail(HotelDetail hotel) {
-        Log.d(">>>>>", hotel.getImage());
         Picasso.with(getContext()).cancelRequest(mThumbnail);
         Picasso.with(getContext())
                 .load(hotel.getImage())
@@ -78,6 +78,11 @@ public abstract class HotelRenderer extends Renderer<HotelDetail> {
     }
 
     private void renderRating(HotelDetail hotel) {
+        LayerDrawable layerDrawable = (LayerDrawable) mStars.getProgressDrawable();
+        DrawableCompat.setTint(DrawableCompat.wrap(layerDrawable.getDrawable(0)), Color.WHITE);
+        DrawableCompat.setTint(DrawableCompat.wrap(layerDrawable.getDrawable(1)), getContext().getResources().getColor(R.color.goldStarsShadow));
+        DrawableCompat.setTint(DrawableCompat.wrap(layerDrawable.getDrawable(2)), getContext().getResources().getColor(R.color.goldStars));
+
         this.mStars.setRating(hotel.getStars());
     }
 

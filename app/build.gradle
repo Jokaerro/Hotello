@@ -76,7 +76,5 @@ dependencies {
 
     compile 'com.github.pedrovgs:renderers:3.3.0'
 
-    compile 'com.github.ome450901:SimpleRatingBar:1.1.2'
-
     compile 'uk.co.chrisjenx:calligraphy:2.2.0'
 }

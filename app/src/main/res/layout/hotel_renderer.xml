@@ -3,20 +3,15 @@
     xmlns:outlineAttrs="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     >
 
     <ImageView
         android:id="@+id/iv_thumbnail"
         style="@style/AppTheme.Hotel.Thumbnail"/>
 
-    <com.willy.ratingbar.ScaleRatingBar
-        xmlns:rb="http://schemas.android.com/apk/res-auto"
+    <RatingBar
         android:id="@+id/ratingBar_indicator"
-        rb:numStars="5"
-        rb:starPadding="15"
-        rb:drawableEmpty="@drawable/empty"
-        rb:drawableFilled="@drawable/filled"
         style="@style/AppTheme.Hotel.Rating"
         />
 

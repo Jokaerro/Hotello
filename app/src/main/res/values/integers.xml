@@ -2,5 +2,4 @@
 <resources>
     <integer name="stars_count">5</integer>
     <integer name="cut_width">1</integer>
-
 </resources>

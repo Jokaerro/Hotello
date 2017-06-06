@@ -16,17 +16,9 @@
             android:layout_height="240dp"
             android:layout_gravity="center"
             />
-
-        <com.willy.ratingbar.ScaleRatingBar
-            xmlns:rb="http://schemas.android.com/apk/res-auto"
+        <RatingBar
             android:id="@+id/ratingBar_indicator"
-            rb:numStars="5"
-            rb:starPadding="15"
-            rb:drawableEmpty="@drawable/empty"
-            rb:drawableFilled="@drawable/filled"
             style="@style/AppTheme.Hotel.Rating"
-            android:clickable="false"
-            android:focusable="false"
             android:layout_gravity="center"
             />
 

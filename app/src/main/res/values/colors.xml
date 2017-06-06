@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="goldStars">#f4ce3d</color>
+    <color name="goldStarsShadow">#c96c08</color>
     <color name="ratingBg">#91a69a9a</color>
 </resources>

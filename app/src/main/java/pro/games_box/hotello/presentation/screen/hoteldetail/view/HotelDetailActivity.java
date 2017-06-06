@@ -1,7 +1,6 @@
 package pro.games_box.hotello.presentation.screen.hoteldetail.view;
 
 import com.squareup.picasso.Picasso;
-import com.willy.ratingbar.ScaleRatingBar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,10 +8,10 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 import butterknife.BindView;
@@ -34,7 +33,7 @@ public class HotelDetailActivity extends BaseActivity{
     ImageView mImage;
 
     @BindView(R.id.ratingBar_indicator)
-    ScaleRatingBar mBar;
+    RatingBar mBar;
 
     @BindView(R.id.title)
     TextView mTitle;
