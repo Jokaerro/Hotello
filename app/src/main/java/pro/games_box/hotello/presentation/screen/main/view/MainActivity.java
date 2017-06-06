@@ -2,18 +2,18 @@ package pro.games_box.hotello.presentation.screen.main.view;
 
 import com.pedrogomez.renderers.AdapteeCollection;
 import com.pedrogomez.renderers.ListAdapteeCollection;
+import com.pedrogomez.renderers.RVRendererAdapter;
 import com.pedrogomez.renderers.RendererAdapter;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 import java.util.List;
 
@@ -28,15 +28,15 @@ import pro.games_box.hotello.presentation.screen.base.BaseActivity;
 import pro.games_box.hotello.presentation.screen.main.presenter.MainPresenter;
 
 public class MainActivity extends BaseActivity implements MainView {
-    private RendererAdapter<HotelDetail> mAdapter;
+    private RVRendererAdapter<HotelDetail> mAdapter;
     private List<HotelDetail> mHotels;
     private ProgressDialog mProgressDialog;
 
     @Inject
     MainPresenter mPresenter;
 
-    @BindView(R.id.hotel_list)
-    ListView mHotelList;
+    @BindView(R.id.rv_renderers)
+    RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +55,10 @@ public class MainActivity extends BaseActivity implements MainView {
 
     private void initListView() {
         AdapteeCollection<HotelDetail> hotelCollection = new ListAdapteeCollection<HotelDetail>();
-        mAdapter = new RendererAdapter<HotelDetail>(new HotelRendererBuilder(), hotelCollection);
+        mAdapter = new RVRendererAdapter<>(new HotelRendererBuilder(), hotelCollection);
 
-        mHotelList.setAdapter(mAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override

@@ -4,6 +4,7 @@ import com.pedrogomez.renderers.Renderer;
 import com.squareup.picasso.Picasso;
 import com.willy.ratingbar.ScaleRatingBar;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,6 +63,7 @@ public abstract class HotelRenderer extends Renderer<HotelDetail> {
     }
 
     private void renderThumbnail(HotelDetail hotel) {
+        Log.d(">>>>>", hotel.getImage());
         Picasso.with(getContext()).cancelRequest(mThumbnail);
         Picasso.with(getContext())
                 .load(hotel.getImage())

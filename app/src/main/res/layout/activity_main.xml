@@ -7,9 +7,10 @@
     tools:context="pro.games_box.hotello.presentation.screen.main.view.MainActivity"
     >
 
-    <ListView
-        android:id="@+id/hotel_list"
+    <android.support.v7.widget.RecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rv_renderers"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
