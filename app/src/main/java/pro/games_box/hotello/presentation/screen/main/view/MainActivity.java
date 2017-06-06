@@ -53,6 +53,12 @@ public class MainActivity extends BaseActivity implements MainView {
         mPresenter.updateHotels();
     }
 
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        mPresenter.destroy();
+    }
+
     private void initListView() {
         AdapteeCollection<HotelDetail> hotelCollection = new ListAdapteeCollection<HotelDetail>();
         mAdapter = new RVRendererAdapter<>(new HotelRendererBuilder(), hotelCollection);
