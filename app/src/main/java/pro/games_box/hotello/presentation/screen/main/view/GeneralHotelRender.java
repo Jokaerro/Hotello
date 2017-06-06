@@ -1,5 +1,6 @@
 package pro.games_box.hotello.presentation.screen.main.view;
 
+import pro.games_box.hotello.R;
 import pro.games_box.hotello.data.entity.HotelDetail;
 import pro.games_box.hotello.presentation.screen.hoteldetail.view.HotelDetailActivity;
 
@@ -11,7 +12,8 @@ public class GeneralHotelRender extends HotelRenderer{
     @Override
     protected void renderDistance() {
         HotelDetail hotel = getContent();
-        getDistance().setText(String.valueOf(hotel.getDistance()));
+        String distance = String.valueOf(hotel.getDistance()) + " " +getContext().getString(R.string.measure_unit);
+        getDistance().setText(distance);
     }
 
     @Override

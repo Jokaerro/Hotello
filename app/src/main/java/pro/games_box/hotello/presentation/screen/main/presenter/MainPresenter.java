@@ -16,10 +16,10 @@ import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import pro.games_box.hotello.R;
+import pro.games_box.hotello.data.datasource.DataSourceImpl;
 import pro.games_box.hotello.data.entity.Hotel;
 import pro.games_box.hotello.data.entity.HotelDetail;
 import pro.games_box.hotello.presentation.application.App;
@@ -36,11 +36,15 @@ public class MainPresenter extends BasePresenter<MainView>{
     public Context mContext;
 
     @Inject
-    MainPresenter(){}
+    public DataSourceImpl mDataSource;
+
+    public MainPresenter(){
+        App.getAppComponent().injectMainPresenter(this);
+    }
 
     public void updateHotels(){
         mView.showProgressDialog();
-        App.getDataSource(mContext).getHotels("0777.json")
+        mDataSource.getHotels("0777.json")
                 .flatMapIterable(new Function<List<Hotel>, Iterable<Hotel>>() {
                     @Override
                     public Iterable<Hotel> apply(@NonNull List<Hotel> hotels) throws Exception {
@@ -50,7 +54,7 @@ public class MainPresenter extends BasePresenter<MainView>{
                 .flatMap(new Function<Hotel, ObservableSource<HotelDetail>>() {
                     @Override
                     public ObservableSource<HotelDetail> apply(@NonNull Hotel hotel) throws Exception {
-                        return App.getDataSource(mContext).getHotel(hotel.getId());
+                        return mDataSource.getHotel(hotel.getId());
                     }
                 })
                 .toList()
@@ -96,7 +100,7 @@ public class MainPresenter extends BasePresenter<MainView>{
     public enum SortType {
         FROM_CENTER,
         FROM_DISTANCE,
-        EMPTY_ROOMS;
+        EMPTY_ROOMS
     }
 
     public void sortHotel(List<HotelDetail> hotels, final SortType typeSort) {
@@ -127,5 +131,10 @@ public class MainPresenter extends BasePresenter<MainView>{
                     mView.updateListView(hotelDetailLists);
                     mView.hideProgressDialog();
                 });
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
     }
 }

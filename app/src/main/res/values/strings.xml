@@ -10,5 +10,5 @@
     <string name="error">Error</string>
     <string name="error_button">OKAY</string>
     <string name="error_empty_hotel_list">Empty hotel list!</string>
-    <string name="measure_unit">km</string>
+    <string name="measure_unit">miles</string>
 </resources>

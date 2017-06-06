@@ -72,7 +72,7 @@ public class HotelDetailActivity extends BaseActivity{
 
         Picasso.with(this)
                 .load(mHotelDetail.getImage())
-                .transform(new CropSquareTransformation())
+                .transform(new CropSquareTransformation(getResources().getInteger(R.integer.cut_width)))
                 .error(R.drawable.placeholder)
                 .placeholder(R.drawable.placeholder)
                 .into(mImage);

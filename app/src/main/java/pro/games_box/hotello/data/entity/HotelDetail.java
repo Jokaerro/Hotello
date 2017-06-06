@@ -23,7 +23,7 @@ public class HotelDetail extends Hotel implements Serializable {
     @SerializedName("image")
     public String mImage;
     public String getImage(){
-        return "https://github.com/iMofas/ios-android-test/raw/master/" + mImage;
+        return "https://github.com/Jokaerro/Hotello/master/api/" + mImage;
     }
 
     @SerializedName("lat")

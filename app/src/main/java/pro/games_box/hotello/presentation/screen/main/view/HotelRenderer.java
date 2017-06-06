@@ -65,7 +65,7 @@ public abstract class HotelRenderer extends Renderer<HotelDetail> {
         Picasso.with(getContext()).cancelRequest(mThumbnail);
         Picasso.with(getContext())
                 .load(hotel.getImage())
-                .transform(new CropSquareTransformation())
+                .transform(new CropSquareTransformation(getContext().getResources().getInteger(R.integer.cut_width)))
                 .error(R.drawable.placeholder)
                 .placeholder(R.drawable.placeholder)
                 .into(mThumbnail);

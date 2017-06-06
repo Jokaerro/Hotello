@@ -9,11 +9,15 @@ import android.graphics.Bitmap;
  */
 
 public class CropSquareTransformation implements Transformation {
+    private int mCutWidth;
+
+    public CropSquareTransformation(int cutWidth){
+        mCutWidth = cutWidth;
+    }
     @Override
     public Bitmap transform(Bitmap source) {
-        int x = 2;
-        int y = 2;
-        Bitmap result = Bitmap.createBitmap(source, x, y, source.getWidth()-3,  source.getHeight()-3);
+        int x = mCutWidth, y = mCutWidth;
+        Bitmap result = Bitmap.createBitmap(source, x, y, source.getWidth()-(mCutWidth*2+mCutWidth),  source.getHeight()-(mCutWidth*2+mCutWidth));
         if (result != source) {
             source.recycle();
         }

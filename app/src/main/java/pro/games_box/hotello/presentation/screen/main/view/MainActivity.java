@@ -38,12 +38,6 @@ public class MainActivity extends BaseActivity implements MainView {
     @BindView(R.id.hotel_list)
     ListView mHotelList;
 
-    public static void start(Activity activity) {
-        Intent intent = new Intent(activity, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        activity.startActivity(intent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
